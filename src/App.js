@@ -20,8 +20,8 @@ class App extends Component{
 
     render(){
     return (
-    <div className="CounterApp">
-        <h1>Counter: {this.state.counter}</h1>
+    <div className="App">
+        <h1>Contador: {this.state.counter}</h1>
         <button onClick={this.minusBtn}>-</button>
         <button onClick={this.plusBtn}>+</button>
     </div>
