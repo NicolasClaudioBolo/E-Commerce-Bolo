@@ -1,15 +1,17 @@
 import React, {Component} from 'react'
 
-import Counter from './components/counter'
+import ItemListContainer from './components/ItemListContainer';
 
 import './App.css';
 
 const App = () => {
   return (
-    <div>
-      <Counter />
+    <div className='App'>
+      <ItemListContainer />
     </div>
   )
 }
 
 export default App;
+
+// GRACIAS MARTÍN!!
