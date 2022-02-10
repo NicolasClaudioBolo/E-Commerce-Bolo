@@ -1,0 +1,28 @@
+.logo{
+    margin-top: 2vh;
+    height: 100px;
+    width: auto;
+    align-items: center;
+}
+
+h1{
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+header{
+    background-color: rgb(255, 162, 129);
+    padding-bottom: 1vh;
+    text-align: center;
+    width: 100vw;
+}
+
+.product{
+    height: 200px;
+    width: auto;
+    margin-top: 5vh;
+}
+
+.Card{
+    background-color:rgb(255, 162, 129);
+}

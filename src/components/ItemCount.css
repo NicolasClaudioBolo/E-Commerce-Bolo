@@ -1,0 +1,8 @@
+.Button{
+    margin: 2px;
+    background-color: rgb(255, 68, 0);
+}
+
+.Button:hover{
+    background-color: rgb(250, 113, 64);
+}

@@ -1,5 +1,11 @@
 import React, { useState } from "react";
 
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+import {Button, CardTitle} from 'reactstrap'
+
+import './ItemCount.css'
+
 function ItemCount({stock, initial, onAdd}) {
 
   const [counter, setCounter] = useState(initial);
@@ -19,10 +25,10 @@ function ItemCount({stock, initial, onAdd}) {
   return (
     <div>
       <div>
-      <h1>Cantidad: {counter}</h1>
-        <button onClick={resta}>-</button>
-        <button onClick={suma}>+</button>
-        <button onClick={()=>onAdd(counter)}>Agregar al carrito</button>
+      <CardTitle>Cantidad: {counter}</CardTitle>
+        <Button className='Button' onClick={resta}>-</Button>
+        <Button className='Button' onClick={suma}>+</Button>
+        <Button className='Button' onClick={()=>onAdd(counter)}>Agregar al carrito</Button>
       </div>
     </div>
   );

@@ -1,0 +1,13 @@
+.Card{
+    margin-top: 5vh;
+    margin-left:2vw;
+    margin-right: 2vw;;
+    background-color:rgb(255, 162, 129);
+    padding: 10px;
+    border-radius: 5%;
+}
+
+.CardImg{
+    padding: 5px;
+    border-radius: 5%;
+}
