@@ -1,6 +1,6 @@
 import React from 'react';
 
-import ItemListContainer from './components/ItemListContainer';
+import ItemList from './components/ItemList';
 
 import Header from './components/Header';
 
@@ -16,11 +16,8 @@ const App = () => {
       <Header 
       title='E-Commerce'/>
       <div className='App'>
-        <CardGroup>
-          <ItemListContainer />
-          <ItemListContainer />
-          <ItemListContainer />
-          <ItemListContainer />
+        <CardGroup className='CardGroup'>
+          <ItemList />
         </CardGroup>
       </div>
     </Container>

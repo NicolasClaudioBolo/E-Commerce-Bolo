@@ -16,13 +16,3 @@ header{
     text-align: center;
     width: 100vw;
 }
-
-.product{
-    height: 200px;
-    width: auto;
-    margin-top: 5vh;
-}
-
-.Card{
-    background-color:rgb(255, 162, 129);
-}
