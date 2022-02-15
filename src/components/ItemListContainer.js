@@ -1,37 +1,21 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
+import ItemList from './ItemList';
 
-import ItemCount from './ItemCount'
+const ItemListContainer = () => {
 
-import 'bootstrap/dist/css/bootstrap.min.css';
 
-import {Card, CardBody, CardImg, CardTitle, CardSubtitle} from 'reactstrap'
+    const [products, setProducts] = useState([])
 
-import './ItemListContainer.css';
-
-const agregar = (cantidad) =>{
-    console.log("Se agregó " + cantidad + " item")
-}
-
-function ItemListContainer ({data}){
-    return (
-    <Card className='Card'>
-        <CardImg src={data.image} 
-        alt='Teléfono'
-        top
-        width="100%"
-        className='CardImg'
-        />
-        <CardBody>
-            <CardTitle tag="h5">
-                {data.title}
-            </CardTitle>
-            <CardSubtitle>
-                {data.price}
-            </CardSubtitle>
-            <ItemCount stock={10} initial={1} onAdd={agregar} />
-        </CardBody>
-    </Card>
-    )
+    useEffect(()=>{
+        fetch('https://fakestoreapi.com/products')
+            .then(res=>res.json())
+            .then(json=>setProducts(json))           
+    }, []);
+  return (
+    <div>
+      <ItemList products={products}/>
+    </div>
+  )
 }
 
 export default ItemListContainer

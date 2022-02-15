@@ -1,10 +1,40 @@
-const items = [
-    {producto:"Teléfono 1", precio: "1500"},
-    {producto:"Teléfono 2", precio: "1200"},
-    {producto:"Teléfono 3", precio: "2000"},
-    {producto:"Teléfono 4", precio: "900"},
-];
+import React from 'react'
 
-const valores = items.map(
-    (item, indice) => `[${indice + 1}] - producto: ${items.producto} - precio: ${items.precio}`
-);
+import ItemCount from './ItemCount'
+
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+import {Card, CardBody, CardImg, CardTitle, CardSubtitle} from 'reactstrap'
+
+import './ItemListContainer.css';
+
+const agregar = (cantidad) =>{
+    console.log("Se agregó " + cantidad + " item")
+}
+
+function Item ({data}){
+    return (
+
+     // ITEM   
+     
+    <Card className='Card'>
+        <CardImg src={data.image} 
+        alt='Teléfono'
+        top
+        width="100%"
+        className='CardImg'
+        />
+        <CardBody>
+            <CardTitle tag="h5">
+                {data.title}
+            </CardTitle>
+            <CardSubtitle>
+                {data.price}
+            </CardSubtitle>
+            <ItemCount stock={10} initial={1} onAdd={agregar} />
+        </CardBody>
+    </Card>
+    )
+}
+
+export default Item

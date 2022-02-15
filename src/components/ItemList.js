@@ -1,22 +1,15 @@
-import React, {useState, useEffect} from 'react'
-import ItemListContainer from './ItemListContainer'
+import React from 'react'
+import Item from './Item'
 
-const ItemList = () => {
-    const [products, setProducts] = useState([])
 
-    useEffect(()=>{
-        fetch('https://fakestoreapi.com/products')
-            .then(res=>res.json())
-            .then(json=>setProducts(json))           
-    }, []);
+const ItemList = ({products}) => {
 
   return (
     <div>
         {products.map((product)=>{
             return(<div key={product.id}>
-                        <ItemListContainer data={product} />
+                        <Item data={product} />
                    </div>)
-            
         })}
     </div>
   )
