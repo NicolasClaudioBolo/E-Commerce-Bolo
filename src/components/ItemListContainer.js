@@ -3,6 +3,7 @@ import ItemList from './ItemList';
 
 const ItemListContainer = () => {
 
+    // LLAMADO A LA API
 
     const [products, setProducts] = useState([])
 
