@@ -1,15 +1,39 @@
-import React from 'react'
-import Detail from './Detail'
+import React from 'react';
 
-const ItemDetail = ({products}) => {
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+import './Item.css';
+
+import { Card, CardBody, CardTitle, CardSubtitle, CardText } from 'reactstrap';
+
+// const Detail = () => {
+//   return (
+    
+//   )
+// }
+
+function ItemDetail ({product}){
   return (
-    <div>
-      {products.map((product)=>{
-            return(<div key={product.id}>
-                        <Detail data={product} />
-                   </div>)
-        })}
-    </div>
+
+   // CARD DETALLE   
+   
+   <div>
+  <Card>
+    <CardBody>
+      <CardTitle tag="h5">
+        {product.title}
+      </CardTitle>
+      <CardSubtitle
+        className="mb-2 text-muted"
+        tag="h6">
+        {product.category}
+      </CardSubtitle>
+      <CardText>
+        {product.description}
+      </CardText>
+    </CardBody>
+  </Card>
+</div>
   )
 }
 

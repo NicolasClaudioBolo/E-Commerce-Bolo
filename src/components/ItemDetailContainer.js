@@ -6,15 +6,17 @@ const ItemDetailContainer = () => {
 
     // LLAMADO A LA API
 
-    const [products, setProducts] = useState([])
+    const [product, setProduct] = useState({})
 
     useEffect(()=>{
-        axios('https://fakestoreapi.com/products').then((res) => setProducts(res.products))          
-    }, []);
+        axios('https://fakestoreapi.com/products')
+        .then((res) => setProduct(res.data[0])
+        // .catch((error) => console.log(error))          
+    )}, []);
 
   return (
     <div>
-      <ItemDetail products={products}/>
+      <ItemDetail product={product}/>
     </div>
   )
 }

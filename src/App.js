@@ -7,7 +7,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import {Container, CardGroup} from 'reactstrap';
 
 import './App.css';
-import ItemListContainer from './components/ItemListContainer';
+// import ItemListContainer from './components/ItemListContainer';
 
 import ItemDetailContainer from './components/ItemDetailContainer';
 
@@ -19,7 +19,7 @@ const App = () => {
       title='E-Commerce'/>
       <div className='App'>
         <CardGroup className='CardGroup'>
-          <ItemListContainer />
+          {/* <ItemListContainer /> */}
           <ItemDetailContainer />
         </CardGroup>
       </div>
