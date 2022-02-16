@@ -6,7 +6,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 import {Card, CardBody, CardImg, CardTitle, CardSubtitle} from 'reactstrap'
 
-import './ItemListContainer.css';
+import './Item.css';
 
 const agregar = (cantidad) =>{
     console.log("Se agregó " + cantidad + " item")
