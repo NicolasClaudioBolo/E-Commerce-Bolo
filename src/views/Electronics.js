@@ -17,7 +17,7 @@ const Electronics = () => {
 
     useEffect(()=>{
         axios('https://fakestoreapi.com/products')
-        .then((res) => setProduct(res.data.find((product) => product.category === "electronics")));
+        .then((res) => setProduct(res.data.find((data) => data.category === "electronics")));
         setTimeout(() => {
           setIsLoading(false);
         }, 1500);        

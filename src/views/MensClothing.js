@@ -17,7 +17,7 @@ const MensClothing = () => {
 
     useEffect(()=>{
         axios('https://fakestoreapi.com/products')
-        .then((res) => setProduct(res.data.find((product) => product.category === "men's clothing")));
+        .then((res) => setProduct(res.data.find((data) => data.category === "men's clothing")));
         setTimeout(() => {
           setIsLoading(false);
         }, 1500);        
