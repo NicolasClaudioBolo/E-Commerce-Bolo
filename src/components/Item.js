@@ -1,10 +1,12 @@
-import React from 'react'
+import React from 'react';
 
-import ItemCount from './ItemCount'
+import ItemCount from './ItemCount';
+
+import {Card, CardBody, CardImg, CardTitle, CardSubtitle, Button} from 'reactstrap';
+
+import {Link} from 'react-router-dom';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
-
-import {Card, CardBody, CardImg, CardTitle, CardSubtitle} from 'reactstrap'
 
 import './Item.css';
 
@@ -32,6 +34,11 @@ function Item ({data}){
                 {data.price}
             </CardSubtitle>
             <ItemCount stock={10} initial={1} onAdd={agregar} />
+            <Link to={`/views/ProductDetail/${data.id}`}>
+                <Button>
+                    <h4>Ver más</h4>
+                </Button>
+            </Link>
         </CardBody>
     </Card>
     )

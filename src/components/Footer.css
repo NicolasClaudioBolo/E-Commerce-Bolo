@@ -1,0 +1,15 @@
+.Footer{
+    background-color: rgb(255, 162, 129);
+    text-align: center;
+    width: 100vw;
+    margin-bottom: 0;
+    margin-top:5vh;
+    border-style: none;
+}
+
+.Icon{
+    height: 30px;
+    width: auto;
+    margin-left: 10vw;
+    margin-right: 10vw;
+}

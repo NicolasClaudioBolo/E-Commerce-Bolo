@@ -4,13 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 import './Item.css';
 
-import { Card, CardBody, CardTitle, CardSubtitle, CardText } from 'reactstrap';
-
-// const Detail = () => {
-//   return (
-    
-//   )
-// }
+import { Card, CardBody, CardTitle, CardSubtitle, CardText, CardImg } from 'reactstrap';
 
 function ItemDetail ({product}){
   return (
@@ -18,8 +12,12 @@ function ItemDetail ({product}){
    // CARD DETALLE   
    
    <div>
-  <Card>
+  <Card className='Card Detail'>
     <CardBody>
+      <CardImg 
+      src={product.image}
+      className="CardImg"
+      />
       <CardTitle tag="h5">
         {product.title}
       </CardTitle>

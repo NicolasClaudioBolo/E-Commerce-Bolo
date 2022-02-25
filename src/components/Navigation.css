@@ -1,0 +1,22 @@
+.navbar{
+    padding: 0;
+    margin:0;
+}
+
+.container{
+    padding:0;
+    margin:0;
+}
+
+.container-fluid{
+    width:fit-content;
+    padding:0;
+}
+
+.link{
+    text-decoration: none;
+    color: #212529;
+    font-weight: bold;
+    margin-right:5vw;
+    margin-left:5vw;
+}

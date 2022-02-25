@@ -1,11 +1,15 @@
 .Card{
-    margin-top: 5vh;
+    margin: 5vh;
     background-color:rgb(255, 162, 129);
-    padding: 10px;
     border-radius: 5%;
+    padding: 5px;
 }
 
 .CardImg{
     padding: 5px;
     border-radius: 5%;
+}
+
+.Detail{
+    width: 50vw;
 }
