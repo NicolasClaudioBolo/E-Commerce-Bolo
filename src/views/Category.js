@@ -8,25 +8,34 @@ import './Category.css'
 const Category = () => {
   return (
     <div className='Link'>
-      <Link to = '/' className='link'>
+      <Link to = '/views/MensClothing' className='link'>
         <Card className='Card'>
             <CardBody>
                 <CardText>
-                    Clothing
+                    Men's clothing
                 </CardText>
             </CardBody>
         </Card>
       </Link>
-      <Link to = '/' className='link'>
+      <Link to = '/views/WomensClothing' className='link'>
         <Card className='Card'>
             <CardBody>
                 <CardText>
-                    Backpacks
+                    Women's clothing
                 </CardText>
             </CardBody>
         </Card>
       </Link>
-      <Link to = '/' className='link'>
+      <Link to = '/views/Electronics' className='link'>
+        <Card className='Card'>
+            <CardBody>
+                <CardText>
+                    Electronics
+                </CardText>
+            </CardBody>
+        </Card>
+      </Link>
+      <Link to = '/views/Jewelery' className='link'>
         <Card className='Card'>
             <CardBody>
                 <CardText>

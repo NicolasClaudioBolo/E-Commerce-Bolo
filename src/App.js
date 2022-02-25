@@ -3,7 +3,10 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import Home from './views/Home';
 import Category from './views/Category';
-import Clothing from './views/Clothing';
+import MensClothing from './views/MensClothing';
+import WomensClothing from './views/WomensClothing';
+import Electronics from './views/Electronics';
+import Jewelery from './views/Jewelery';
 import ProductDetail from './views/ProductDetail';
 import Contact from './views/Contact';
 import About from './views/About';
@@ -23,7 +26,10 @@ const App = () => {
       <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/views/Category' element={<Category />} />
-          <Route path='/views/Clothing' element={<Clothing />} />
+          <Route path='/views/MensClothing' element={<MensClothing />} />
+          <Route path='/views/WomensClothing' element={<WomensClothing />} />
+          <Route path='/views/Jewelery' element={<Jewelery />} />
+          <Route path='/views/Electronics' element={<Electronics />} />
           <Route path='/views/ProductDetail/:id' element={<ProductDetail />} />
           <Route path='/views/Contact' element={<Contact />} />
           <Route path='/views/About' element={<About />} />
