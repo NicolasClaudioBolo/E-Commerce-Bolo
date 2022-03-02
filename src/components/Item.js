@@ -10,10 +10,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 import './Item.css';
 
-const agregar = (cantidad) =>{
-    console.log("Se agregó " + cantidad + " item")
-}
-
 function Item ({data}){
     return (
 
@@ -33,7 +29,6 @@ function Item ({data}){
             <CardSubtitle>
                 {data.price}
             </CardSubtitle>
-            <ItemCount stock={10} initial={1} onAdd={agregar} />
             <Link to={`/views/ProductDetail/${data.id}`}>
                 <Button>
                     <h4>Ver más</h4>

@@ -10,8 +10,6 @@ const ItemDetailContainer = () => {
     // LLAMADO A LA API
     const {id} = useParams()
 
-    console.log(id)
-
     const [product, setProduct] = useState({})
     const [isLoading, setIsLoading] = useState(true);
 
@@ -21,7 +19,7 @@ const ItemDetailContainer = () => {
         setTimeout(() => {
           setIsLoading(false);
         }, 1500);        
-    }, []);
+    }, [id]);
 
   return (
     <div>

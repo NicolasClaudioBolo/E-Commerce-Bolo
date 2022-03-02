@@ -10,9 +10,9 @@ const Footer = () => {
     <div>
         <Card className="Footer">
             <CardBody>
-              <a href='#'><CardImg src={linkedin} className='Icon' /></a>
-              <a href='#'><CardImg src={whatsapp} className='Icon'/></a>
-              <a href='#'><CardImg src={instagram} className='Icon'/></a>  
+              <a href='https://www.linkedin.com/in/nicol%C3%A1s-bolo-99065622b/' target='_blank'><CardImg src={linkedin} className='Icon' /></a>
+              <a href='https://web.whatsapp.com/' target='_blank'><CardImg src={whatsapp} className='Icon'/></a>
+              <a href='https://www.instagram.com/_nicobolo/' target='_blank'><CardImg src={instagram} className='Icon'/></a>  
             </CardBody>
             <CardFooter>
                 <i>Todos los derechos reservados 2022</i>

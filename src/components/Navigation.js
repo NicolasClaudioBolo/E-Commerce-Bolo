@@ -20,11 +20,6 @@ const Navigation = () => {
               </Link>
           </NavItem>
           <NavItem>
-              <Link to='/views/Category' className='link'>
-                    Categories
-              </Link>
-          </NavItem>
-          <NavItem>
               <Link to='/views/About' className='link'>
                     About
               </Link>
@@ -32,6 +27,26 @@ const Navigation = () => {
           <NavItem>
               <Link to='/views/Contact' className='link'>
                     Contact
+              </Link>
+          </NavItem>
+          <NavItem>
+              <Link to="/views/SearchCat/men'sclothing" className='link'>
+                    Men's clothing
+              </Link>
+          </NavItem>
+          <NavItem>
+              <Link to="/views/SearchCat/women'sclothing" className='link'>
+                    Women's clothing
+              </Link>
+          </NavItem>
+          <NavItem>
+              <Link to="/views/SearchCat/jewelery" className='link'>
+                    Jewelery
+              </Link>
+          </NavItem>
+          <NavItem>
+              <Link to='/views/SearchCat/electronics' className='link'>
+                    Electronics
               </Link>
           </NavItem>
         </Nav>
