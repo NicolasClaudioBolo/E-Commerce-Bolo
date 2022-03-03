@@ -16,7 +16,7 @@ const Header = ({ title }) => {
           <Navigation />
           <Link to='/'>
             <img src={Img} alt='Logo' className='logo'></img>
-            <h1 className='link'>{title}</h1>
+            <h1>{title}</h1>
           </Link>
       </header>
     </div>

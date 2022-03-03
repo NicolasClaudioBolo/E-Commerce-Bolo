@@ -13,10 +13,15 @@
     padding:0;
 }
 
-.link{
+.Link{
     text-decoration: none;
     color: #212529;
     font-weight: bold;
-    margin-right:3vw;
-    margin-left:3vw;
+    margin-right:2vw;
+    margin-left:2vw;
+}
+
+.Link:hover{
+    border-style: groove;
+    border-color: black;
 }

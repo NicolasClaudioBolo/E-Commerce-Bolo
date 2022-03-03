@@ -15,37 +15,37 @@ const Navigation = () => {
           className="me-auto navbar"
           navbar>
           <NavItem>
-              <Link to='/' className='link'>
+              <Link to='/' className='Link'>
                     Home
               </Link>
           </NavItem>
           <NavItem>
-              <Link to='/views/About' className='link'>
+              <Link to='/views/About' className='Link'>
                     About
               </Link>
           </NavItem>
           <NavItem>
-              <Link to='/views/Contact' className='link'>
+              <Link to='/views/Contact' className='Link'>
                     Contact
               </Link>
           </NavItem>
           <NavItem>
-              <Link to="/views/SearchCat/men'sclothing" className='link'>
+              <Link to="/views/SearchCat/men'sclothing" className='Link'>
                     Men's clothing
               </Link>
           </NavItem>
           <NavItem>
-              <Link to="/views/SearchCat/women'sclothing" className='link'>
+              <Link to="/views/SearchCat/women'sclothing" className='Link'>
                     Women's clothing
               </Link>
           </NavItem>
           <NavItem>
-              <Link to="/views/SearchCat/jewelery" className='link'>
+              <Link to="/views/SearchCat/jewelery" className='Link'>
                     Jewelery
               </Link>
           </NavItem>
           <NavItem>
-              <Link to='/views/SearchCat/electronics' className='link'>
+              <Link to='/views/SearchCat/electronics' className='Link'>
                     Electronics
               </Link>
           </NavItem>

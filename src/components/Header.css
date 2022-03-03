@@ -30,3 +30,7 @@ a{
 a:hover{
     color: #212529;
 }
+
+h1{
+    margin:0;
+}
