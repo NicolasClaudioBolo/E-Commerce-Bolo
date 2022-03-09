@@ -1,4 +1,9 @@
 .cart{
     font-size: 30px;
     font-weight: 600;
+    margin: 5vh;
+    margin-bottom:3vh;
+    background-color:rgb(255, 162, 129);
+    border-radius: 5%;
+    padding: 5px;
 }

@@ -1,7 +1,5 @@
 import React from 'react';
 
-import ItemCount from './ItemCount';
-
 import {Card, CardBody, CardImg, CardTitle, CardSubtitle, Button} from 'reactstrap';
 
 import {Link} from 'react-router-dom';

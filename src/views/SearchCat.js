@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react'
-import ItemList from '../components/ItemList';
+import ItemList from '../components/ItemList/ItemList';
 import axios from 'axios';
 import { Spinner } from 'reactstrap';
 import '../components/Spinner.css';

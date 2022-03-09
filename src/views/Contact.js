@@ -1,5 +1,5 @@
 import React from 'react'
-import '../components/Navigation.css'
+import '../components/Navigation/Navigation.css'
 
 const Contact = () => {
   return (

@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
-import ItemCount from './ItemCount';
+import ItemCount from '../ItemCount/ItemCount'
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './Item.css';
+import '../Item/Item.css'
 import { Card, CardBody, CardTitle, CardSubtitle, CardText, CardImg, Button } from 'reactstrap';
 import {Link} from 'react-router-dom';
 
@@ -9,17 +9,20 @@ import {Link} from 'react-router-dom';
 
 function ItemDetail ({product}){
 
-  const [cantidad, setCantidad] = useState(0)
-  const agregar = (cantidad) =>{
+  const [value, setValue] = useState({})
 
-    setCantidad(cantidad)
-
-  //   const Choice = (product.id)
-    
-  //   const Quant = cantidad
-  
-  //   console.log(toString(setChoice) + Quant)
+  const elegir = (value) => {
+    setValue(value)
   }
+  const [cantidad, setCantidad] = useState(0)
+  
+  const agregar = (cantidad) =>{
+    setCantidad(cantidad)
+  }
+
+  console.log(cantidad)
+  console.log(value)
+  
 
   return (
 
@@ -43,7 +46,12 @@ function ItemDetail ({product}){
       <CardText>
         {product.description}
       </CardText>
-      {cantidad===0?<ItemCount stock={10} initial={1} onAdd={agregar} />:<Link to='/views/Cart'><Button>Terminar mi compra</Button></Link>}
+      {cantidad===0?<ItemCount stock={10} initial={1} onAdd={agregar} />:
+      <Link to='/views/Cart'>
+        <Button onClick={elegir} value={value}>
+          Terminar mi compra
+        </Button>
+      </Link>}
     </CardBody>
   </Card>
 </div>

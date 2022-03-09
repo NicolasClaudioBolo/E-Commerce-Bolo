@@ -1,9 +1,9 @@
 import React from 'react'
 import {Card, CardFooter, CardHeader, CardText, CardTitle, CardBody, Button, CardImg} from 'reactstrap'
 import './Footer.css'
-import linkedin from '../assets/linkedin.png'
-import whatsapp from '../assets/whatsapp.png'
-import instagram from '../assets/instagram.png'
+import linkedin from '../../assets/linkedin.png'
+import whatsapp from '../../assets/whatsapp.png'
+import instagram from '../../assets/instagram.png'
 
 const Footer = () => {
   return (

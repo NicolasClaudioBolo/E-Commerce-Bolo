@@ -1,8 +1,8 @@
 import React from 'react'
 
-import Img from '../assets/Cart.png'
+import Img from '../../assets/Cart.png'
 
-import Navigation from './Navigation'
+import Navigation from '../Navigation/Navigation'
 
 import { Link } from 'react-router-dom'
 
