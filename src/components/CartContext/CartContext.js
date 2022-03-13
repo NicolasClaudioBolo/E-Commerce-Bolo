@@ -8,18 +8,16 @@ export const CartProvider = ({children}) => {
     const [quantity, setQuantity] = useState(1)
     const [added, setAdded] = useState(false)
 
-    // TODO if item existe, sumale la cantidad, else crear nuevo item
 
+    // Esta es la función que va a cambiar el estado cart
+    // La voy a invocar en ItemDetail.js
     const AddToCart = (product, cantidad) => {
-        // Esta es la función que va a cambiar el estado cart
-        // La voy a invocar en ItemDetail.js
-        const newItem = {
-            item: product,
-            quantity: cantidad
-        }
-        console.log('newItem', newItem)
         
-        const index = cart.findIndex(i => i.product == product)
+        
+        
+        // If item existe, sumale la cantidad, else crear nuevo item
+        
+        const index = cart.findIndex(i => i.product === product)
             if (index >= 0) {
                 const itemInCart = cart[index]         
                 itemInCart.quantity = itemInCart.quantity + cantidad
@@ -28,10 +26,11 @@ export const CartProvider = ({children}) => {
                 updatedCart.push(itemInCart) //agrego item actualizado.
                 setCart(updatedCart)   //seteo carrito actualizado. 
             } else {
-                const addSameItem = {
+                const newItem = {
                     item: product,
                     quantity: cantidad
                 }
+                console.log('newItem', newItem)
                 // SPREAD OPERATOR Setea cart con lo que ya tenía cart previamente cargado
                 setCart([...cart, newItem])
             }
@@ -39,45 +38,50 @@ export const CartProvider = ({children}) => {
         
 
         
-        setAdded(true)
-    }
+                setAdded(true)
+        }
 
-    const CheckOut = (form) => {
-        cart.length >=1? alert('Gracias por tu compra!') : alert('Primero añadí algún item :)')
-        let total = 0
-        cart.forEach(i => Math.round((total += (i.item.price * i.quantity) + Number.EPSILON) * 100) / 100)
-        const order = cart.map(item => {
-            return {
-                item: item.item.title,
-                quantity: item.quantity,
-                subtotal: item.quantity * item.item.price
-            }
-        })
-    }
+        //Esta es la función que modifica el estado global del carrito, los children sí tienen acceso a esta función!
+        const removeFromCart = (itemId) => {
+                const newCart = cart.filter(item => item.item.id !== itemId)
+                setCart(newCart)
+        }
 
-    // Cada vez que cambia el estado de cart lo renderiza nuevamente
-
-    useEffect(()=>{
-        setQuantity(() =>  cart.reduce((t, item) => t += item.quantity, 0))
-    },[cart])
-
-
-    //Esta es la función que modifica el estado global del carrito, los children sí tienen acceso a esta función!
-    const removeFromCart = (itemId) => {
-        const newCart = cart.filter(item => item.item.id !== itemId)
-        setCart(newCart)
-    }
-
-      //Borra todos los items del carrito.
-    const clear = () => {
-        setCart([])
         
-    }
+        //Borra todos los items del carrito.
+        const clear = () => {
+                setCart([])
+        
+        }
+
+        //Terminar compra
+
+        const CheckOut = () => {
+                cart.length >=1? alert('Gracias por tu compra!') : alert('Primero añadí algún item :)')
+                let total = 0
+                cart.forEach(i => Math.round((total += (i.item.price * i.quantity) + Number.EPSILON) * 100) / 100)
+                cart.map(item => {
+                    return {
+                        item: item.item.title,
+                        quantity: item.quantity,
+                        subtotal: item.quantity * item.item.price
+                    }
+            })
+        }
+
+        // Cada vez que cambia el estado de cart lo renderiza nuevamente
+
+        useEffect(()=>{
+                    setQuantity(() =>  cart.reduce((t, item) => t += item.quantity, 0))
+                },[cart])
+
+
+        
+
 
     return (
-        <CartContext.Provider value={{cart, clear, quantity, AddToCart, removeFromCart, CheckOut}}>
-            {/* {Props} */}
+        <CartContext.Provider value={{cart, added, clear, quantity, AddToCart, removeFromCart, CheckOut}}>
             {children}
         </CartContext.Provider>
-    )
+        )
 }
