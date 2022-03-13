@@ -13,12 +13,14 @@ const ItemDetailContainer = () => {
     const [product, setProduct] = useState({})
     const [isLoading, setIsLoading] = useState(true);
 
+    // axios llama a la API y mapea los productos por id
+
     useEffect(()=>{
         axios('https://fakestoreapi.com/products')
         .then((res) => setProduct(res.data.find((product) => product.id == id)));
         setTimeout(() => {
           setIsLoading(false);
-        }, 1500); console.log(id)       
+        }, 1500);       
     }, [id]);
 
   return (

@@ -1,14 +1,16 @@
-import React from 'react';
+import React, {useState} from 'react';
 import ItemListContainer from '../components/ItemListContainer/ItemListContainer';
-import {CardGroup} from 'reactstrap';
+import {CardGroup, Spinner} from 'reactstrap';
 import '../App.css';
 
 const Home = () => {
+
+  const [isLoading, setIsLoading] = useState(true);
+  setTimeout(() => {
+    setIsLoading(false);
+  }, 1000)
   return (
-    <div className='App'>
-        <CardGroup>
-          <ItemListContainer/>
-        </CardGroup>
+    <div className='App'>{isLoading ? <Spinner className='Spinner'/> : <CardGroup><ItemListContainer/></CardGroup>}
     </div>
   )
 }

@@ -12,11 +12,7 @@ export const CartProvider = ({children}) => {
     // Esta es la función que va a cambiar el estado cart
     // La voy a invocar en ItemDetail.js
     const AddToCart = (product, cantidad) => {
-        
-        
-        
-        // If item existe, sumale la cantidad, else crear nuevo item
-        
+        // If item existe, sumale la cantidad, else crear nuevo item   
         const index = cart.findIndex(i => i.product === product)
             if (index >= 0) {
                 const itemInCart = cart[index]         
@@ -42,8 +38,8 @@ export const CartProvider = ({children}) => {
         }
 
         //Esta es la función que modifica el estado global del carrito, los children sí tienen acceso a esta función!
-        const removeFromCart = (itemId) => {
-                const newCart = cart.filter(item => item.item.id !== itemId)
+        const removeFromCart = (product) => {
+                const newCart = cart.filter(item => item.item.id !== product)
                 setCart(newCart)
         }
 
@@ -59,15 +55,7 @@ export const CartProvider = ({children}) => {
         const CheckOut = () => {
                 cart.length >=1? alert('Gracias por tu compra!') : alert('Primero añadí algún item :)')
                 let total = 0
-                cart.forEach(i => Math.round((total += (i.item.price * i.quantity) + Number.EPSILON) * 100) / 100)
-                cart.map(item => {
-                    return {
-                        item: item.item.title,
-                        quantity: item.quantity,
-                        subtotal: item.quantity * item.item.price
-                    }
-            })
-        }
+                cart.forEach(i => Math.round((total += (i.item.price * i.quantity) + Number.EPSILON) * 100) / 100)}
 
         // Cada vez que cambia el estado de cart lo renderiza nuevamente
 

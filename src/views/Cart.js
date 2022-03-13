@@ -1,4 +1,4 @@
-import React, {useContext, useState} from 'react';
+import React, {useContext} from 'react';
 import '../App.css'
 import '../components/Header/Header.css'
 import './Cart.css'
@@ -8,11 +8,7 @@ import { Button } from 'reactstrap';
 
 const Cart = () => {
 
-  const [value, setValue] = useState({})
-
   const {cart, CheckOut} = useContext(CartContext)
-  
-  console.log(cart)
 
   return (
     <div className='App'>

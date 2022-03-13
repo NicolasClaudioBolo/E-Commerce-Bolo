@@ -1,41 +1,43 @@
-import React, {useState, useContext} from 'react'
-import { Card, CardBody, CardImg, CardTitle, Button} from 'reactstrap';
-import Img from '../../assets/shopping-cart.png'
+import React, {useContext} from 'react'
+import {CardBody, CardImg, CardText, Button} from 'reactstrap';
 import { CartContext } from '../CartContext/CartContext';
+import './ItemCart.css'
 
-const ItemCart = ({item}) => {
-
-  const [value, setValue] = useState({})
-
-  const newState = [{item}]
-
-  // console.log('newState in ItemCart', newState)
-
-  console.log('title:', item?.title)
+const ItemCart = () => {
 
   const {removeFromCart} = useContext(CartContext)
+  const {cart} = useContext(CartContext)
 
-  console.log('quantity:', item?.cantidad)
+  console.log(cart)
 
-  return (
-    <div>
-      <Card className='cart'>
-          <CardBody>
-            <CardImg src={Img} className='logo'/>
-            <CardTitle>
-                  <ul>
-                      <li>{item.title}</li>
-                      <li>$ {item.price}</li>
-                      <li>Cantidad: {item.quantity}</li>
-                  </ul>
-                  <Button onClick={() => removeFromCart}>
-                      Borrar
-                  </Button>
-            </CardTitle>
-          </CardBody>
-        </Card>
-    </div>
-  )
+  
+
+
+  return(
+    cart.map(item => {
+      return (
+        <CardBody>
+          <CardImg 
+            src={item.item.image}
+            className='imgIcon'
+            key={item.item.image}
+            />
+          <CardText key={item.item.title}>
+            {item.item.title}
+          </CardText>
+          <CardText key={item.quantity}>
+            {item.quantity}
+          </CardText>
+          <CardText key={item.item.price}>
+            {item.item.price}
+          </CardText>
+          <CardText key={Button}>
+            <Button onClick={removeFromCart}>Borrar</Button>
+          </CardText>
+        </CardBody>
+      )}
+  ))
+  
 }
 
 export default ItemCart
