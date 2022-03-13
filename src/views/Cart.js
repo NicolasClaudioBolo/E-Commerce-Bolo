@@ -1,33 +1,32 @@
-import React, {useContext} from 'react';
-import { Card, CardBody, CardImg, CardText, CardTitle} from 'reactstrap';
+import React, {useContext, useState} from 'react';
 import '../App.css'
 import '../components/Header/Header.css'
 import './Cart.css'
-import Img from '../assets/shopping-cart.png'
 import { CartContext } from '../components/CartContext/CartContext';
-import ItemDetail from '../components/ItemDetail/ItemDetail';
+import ItemCart from '../components/ItemCart/ItemCart';
+import { Button } from 'reactstrap';
 
 const Cart = () => {
 
-  const [cart, setCart] = useContext(CartContext)
+  const [value, setValue] = useState({})
 
+  const {cart, CheckOut} = useContext(CartContext)
+  
   console.log(cart)
 
   return (
     <div className='App'>
-        <Card className='cart'>
-          <CardBody>
-            <CardImg src={Img} className='logo'/>
-            <CardTitle>
-                  Estás en el carrito
-                  {cart.map(() =>{
-                    return <ItemDetail product={cart} />
-                  })}
-            </CardTitle>
-          </CardBody>
-        </Card>
+        {cart.map((c) =>{
+            return  <div key={c.item.id}>
+                      <ItemCart item={c.item} key={c.item.id} /> 
+                    </div>
+        })}
+                      <Button onClick={CheckOut}>
+                            Confirmar compra
+                      </Button>
     </div>
   )
 }
 
 export default Cart
+
