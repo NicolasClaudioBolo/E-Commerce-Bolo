@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import ItemListContainer from '../components/ItemListContainer/ItemListContainer';
 import {CardGroup, Spinner} from 'reactstrap';
 import '../App.css';
+import './Home.css'
 
 const Home = () => {
 
@@ -10,7 +11,7 @@ const Home = () => {
     setIsLoading(false);
   }, 1000)
   return (
-    <div className='App'>{isLoading ? <Spinner className='Spinner'/> : <CardGroup><ItemListContainer/></CardGroup>}
+    <div className='App home'>{isLoading ? <Spinner className='Spinner'/> : <CardGroup><ItemListContainer/></CardGroup>}
     </div>
   )
 }

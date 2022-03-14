@@ -47,7 +47,7 @@ function ItemDetail ({product}){
       </CardText>
       {cantidad===0?<ItemCount stock={10} initial={1} onAdd={agregar} onClick={() => setValue(newState)}/>:
       <Link to='/views/Cart'>
-        <Button>
+        <Button className='Button'>
           Ver el carrito
         </Button>
       </Link>}

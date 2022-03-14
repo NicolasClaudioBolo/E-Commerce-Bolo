@@ -28,7 +28,7 @@ function Item ({data}){
                 {data.price}
             </CardSubtitle>
             <Link to={`/views/ProductDetail/${data.id}`}>
-                <Button>
+                <Button className='Button'>
                     <h4>Ver más</h4>
                 </Button>
             </Link>

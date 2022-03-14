@@ -1,9 +1,30 @@
 .cart{
-    font-size: 30px;
-    font-weight: 600;
+    font-size: 25px;
     margin: 5vh;
     margin-bottom:3vh;
+    border-radius: 5%;
+    padding: 5px;
+    text-align: center;
+    width:50vw;
+    margin-left:25vw;
+}
+
+.Card{
     background-color:rgb(255, 162, 129);
     border-radius: 5%;
     padding: 5px;
+}
+
+.btn-secondary{
+    width: 200px;
+    margin: 3px;
+}
+
+.buttonsDiv{
+    width: 350px;
+}
+
+.Container{
+    display: flex;
+    flex-direction: column;
 }

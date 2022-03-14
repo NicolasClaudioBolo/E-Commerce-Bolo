@@ -5,6 +5,7 @@ import { Spinner } from 'reactstrap';
 import '../components/Spinner.css';
 import { useParams } from 'react-router-dom';
 import '../App.css'
+import './Home.css'
 
 const SearchCat = () => {
     const {category} = useParams()
@@ -23,7 +24,7 @@ const SearchCat = () => {
     }, [category]);
 
   return (
-    <div className='App'>
+    <div className='App home'>
       {isLoading ? <Spinner className='Spinner'/> : <ItemList products={products}/>}
     </div>
   )

@@ -2,3 +2,10 @@
     height: 150px;
     width: 150px;
 }
+
+.Card{
+    margin: 5vh;
+    background-color:rgb(255, 162, 129);
+    border-radius: 5%;
+    padding: 5px;
+}
