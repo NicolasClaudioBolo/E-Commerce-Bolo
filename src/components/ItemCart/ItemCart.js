@@ -8,11 +8,6 @@ const ItemCart = () => {
   const {removeFromCart} = useContext(CartContext)
   const {cart} = useContext(CartContext)
 
-  console.log(cart)
-
-  
-
-
   return(
     cart.map(item => {
       return (

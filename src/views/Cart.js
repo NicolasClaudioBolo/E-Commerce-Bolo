@@ -5,10 +5,13 @@ import './Cart.css'
 import { CartContext } from '../components/CartContext/CartContext';
 import ItemCart from '../components/ItemCart/ItemCart';
 import { Button } from 'reactstrap';
+import { Link } from 'react-router-dom';
 
 const Cart = () => {
 
-  const {cart, CheckOut} = useContext(CartContext)
+  const {cart, CheckOut, clear} = useContext(CartContext)
+
+  console.log('Carrito: ', cart)
 
   return (
     <div className='App'>
@@ -17,9 +20,11 @@ const Cart = () => {
                       <ItemCart item={c.item} key={c.item.id} /> 
                     </div>
         })}
-                      <Button onClick={CheckOut}>
-                            Confirmar compra
-                      </Button>
+                      <Button onClick={clear}>Borrar todo</Button>
+                      <Button onClick={CheckOut}>Confirmar compra</Button>
+                      <Link to='/'>
+                        <Button>Volver atrás</Button>
+                      </Link>
     </div>
   )
 }

@@ -39,7 +39,7 @@ export const CartProvider = ({children}) => {
 
         //Esta es la función que modifica el estado global del carrito, los children sí tienen acceso a esta función!
         const removeFromCart = (product) => {
-                const newCart = cart.filter(item => item.item.id !== product)
+                const newCart = cart.filter(item => item.item.id !== product.id)
                 setCart(newCart)
         }
 
@@ -53,7 +53,7 @@ export const CartProvider = ({children}) => {
         //Terminar compra
 
         const CheckOut = () => {
-                cart.length >=1? alert('Gracias por tu compra!') : alert('Primero añadí algún item :)')
+                cart.length >=1? alert('Gracias por tu compra!') : alert('Primero añadí algún item:)')
                 let total = 0
                 cart.forEach(i => Math.round((total += (i.item.price * i.quantity) + Number.EPSILON) * 100) / 100)}
 
