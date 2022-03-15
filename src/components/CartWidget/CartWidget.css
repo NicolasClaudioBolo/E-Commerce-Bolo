@@ -12,5 +12,9 @@
 
 .length{
     font-size: 30px;
-    margin-left: 2vw;
+    margin-left: 1vw;
+    color: white;
+    background-color: rgb(255, 68, 0);;
+    border-radius: 25%;
+    padding: 3px;
 }

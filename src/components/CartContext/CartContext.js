@@ -53,7 +53,7 @@ export const CartProvider = ({children}) => {
         //Terminar compra
 
         const CheckOut = () => {
-                cart.length >=1? alert('Gracias por tu compra!') : alert('Primero añadí algún item')
+                cart.length >=1? alert('¡Gracias por tu compra!') : alert('Primero añadí algún producto a tu carrito')
         }
 
         // Cada vez que cambia el estado de cart, useEffect lo renderiza nuevamente
@@ -61,10 +61,6 @@ export const CartProvider = ({children}) => {
         useEffect(()=>{
                     setQuantity(() =>  cart.reduce((t, item) => t += item.quantity, 0))
                 },[cart])
-
-
-        
-
 
     return (
         <CartContext.Provider value={{cart, added, clear, quantity, AddToCart, removeFromCart, CheckOut}}>
