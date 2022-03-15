@@ -12,19 +12,19 @@ const Cart = () => {
   const {cart, CheckOut, clear} = useContext(CartContext)
   const cartItems = useContext(CartContext)
 
-  console.log('Carrito: ', cart)
-
   return (
-    <Container>
-    <div className='cart App Container'>
+    <Container key={Container}>
+    <div className='cart App Container' key='3123'>
         {cartItems.cart.map((c) =>{
-            return  <div key={c.item.id}>
-                      <ItemCart item={c.item} key={c.item.id} /> 
+            return  <div key='34563'>
+                      <ItemCart item={c} key={c.item.id} /> 
                     </div>
         })}
                     <div key={Math.random()} className='buttonsDiv'>
                       <Button onClick={clear} key={Math.random()} className='Button'>Borrar todo</Button>
-                      <Button onClick={CheckOut} key={Math.random()} className='Button'>Finalizar compra</Button>
+                      <Link to='/views/CheckOut'>
+                        <Button onClick={CheckOut} key={Math.random()} className='Button'>Finalizar compra</Button>
+                      </Link>
                       <Link to='/' key={Math.random()}>
                         <Button key={Math.random()} className='Button'>Seguir comprando</Button>
                       </Link>

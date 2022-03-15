@@ -9,14 +9,17 @@ export const CartProvider = ({children}) => {
 
 
     // Esta es la función que va a cambiar el estado cart
-    // La voy a invocar en ItemDetail.js
+    // La invoco en ItemDetail.js
     const AddToCart = (product, cantidad) => {
         // If item existe, le suma la cantidad deseada, else crea nuevo item   
-        const index = cart.findIndex(i => i.product == product.id)
+        const index = cart.findIndex(item => {
+            return product.id == item.item.id
+        })
             if (index >= 0) {
                 // Item encontrado. Le suma la cantidad deseada
+                
                 const itemInCart = cart[index]         
-                itemInCart.quantity = itemInCart.quantity + product.cantidad
+                itemInCart.quantity = itemInCart.quantity + cantidad
 
                 //updatedCart es el carrito sin el item encontrado para agregarselo actualizado.
                 const updatedCart = cart.filter((c, i) => i !== index)
@@ -27,7 +30,6 @@ export const CartProvider = ({children}) => {
                     item: product,
                     quantity: cantidad
                 }
-                console.log('newItem', newItem)
                 // SPREAD OPERATOR Setea cart con lo que ya tenía cart previamente cargado
                 setCart([...cart, newItem])
             }

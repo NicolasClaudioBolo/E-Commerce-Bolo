@@ -28,32 +28,32 @@ function ItemDetail ({product}){
    // CARD DETALLE   
 
    <div>
-  <Card className='Card Detail'>
-    <CardBody>
-      <CardImg 
-      src={product.image}
-      className="CardImg"
-      />
-      <CardTitle tag="h5">
-        {product.title}
-      </CardTitle>
-      <CardSubtitle
-        className="mb-2 text-muted"
-        tag="h6">
-        {product.category}
-      </CardSubtitle>
-      <CardText>
-        {product.description}
-      </CardText>
-      {cantidad===0?<ItemCount stock={10} initial={1} onAdd={agregar} onClick={() => setValue(newState)}/>:
-      <Link to='/views/Cart'>
-        <Button className='Button'>
-          Ver el carrito
-        </Button>
-      </Link>}
-    </CardBody>
-  </Card>
-</div>
+    <Card className='Card Detail'>
+      <CardBody>
+        <CardImg 
+        src={product.image}
+        className="CardImg"
+        />
+        <CardTitle tag="h5">
+          {product.title}
+        </CardTitle>
+        <CardSubtitle
+          className="mb-2 text-muted"
+          tag="h6">
+          {product.category}
+        </CardSubtitle>
+        <CardText>
+          {product.description}
+        </CardText>
+        {cantidad===0?<ItemCount stock={10} initial={1} onAdd={agregar} onClick={() => setValue(newState)}/>:
+        <Link to='/views/Cart'>
+          <Button className='Button'>
+            Ver el carrito
+          </Button>
+        </Link>}
+      </CardBody>
+    </Card>
+  </div>
   )
 }
 
