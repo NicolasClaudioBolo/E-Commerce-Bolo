@@ -1,6 +1,10 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
+
+// Import de componentes
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
+
+// Import de routes
 import Home from './views/Home';
 import SearchCat from './views/SearchCat';
 import ProductDetail from './views/ProductDetail';
@@ -9,11 +13,18 @@ import About from './views/About';
 import Error from './views/Error';
 import Cart from './views/Cart';
 import CheckOut from './views/CheckOut';
+
+// Import de dos dependencias
 import {Container} from 'reactstrap';
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
+
+// Import de context
 import { CartProvider } from './components/CartContext/CartContext';
+
+// Import de hojas de estilo
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
+
 
 
 const App = () => {

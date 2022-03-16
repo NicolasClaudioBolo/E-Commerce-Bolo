@@ -1,20 +1,33 @@
 import React, {useState, useEffect} from 'react';
 import ItemList from '../ItemList/ItemList';
+import { collection, query, where, getDocs } from "firebase/firestore";
+import { db } from '../../firebase/firebaseConfig'
 
 const ItemListContainer = () => {
 
+  const [itemsData, setItemsData] = useState([])
+
+  useEffect(() => {
+    const getItems = async () => {
+      const q = query(collection(db, 'fakestoreapi'), 
+      where("category", "==", "men's clothing"));
+      const docs = []
+      const querySnapshot = await getDocs(q);
+      querySnapshot.forEach((doc) => {
+        docs.push({...doc.data(), id: doc.id});
+      });
+      setItemsData(docs);
+    }; 
+    getItems();
+}, []);
+
     // LLAMADO A LA API
 
-    const [products, setProducts] = useState([])
-
-    useEffect(()=>{
-        fetch('https://fakestoreapi.com/products')
-            .then(res=>res.json())
-            .then(json=>setProducts(json))           
-    }, []);
   return (
     <div>
-      <ItemList products={products}/>
+      {itemsData.map((data) =>{
+        return <ItemList itemsData={data} key={data.id} />
+      })}
     </div>
   )
 }
