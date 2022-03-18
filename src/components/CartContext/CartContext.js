@@ -62,6 +62,8 @@ export const CartProvider = ({children}) => {
                     setQuantity(() =>  cart.reduce((t, item) => t += item.quantity, 0))
                 },[cart])
 
+        // TODO Función para sumar total
+
     return (
         <CartContext.Provider value={{cart, added, clear, quantity, AddToCart, removeFromCart, CheckOut}}>
             {children}
