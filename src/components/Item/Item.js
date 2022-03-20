@@ -15,7 +15,7 @@ function Item ({data}){
      
     <Card className='Card'>
         <CardImg src={data.image} 
-        alt='Teléfono'
+        alt={data.title}
         top
         width="100%"
         className='CardImg'

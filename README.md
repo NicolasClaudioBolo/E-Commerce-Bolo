@@ -9,3 +9,5 @@ Este es un proyecto final para el curso de React JS de la carrera de Desarrollo 
 Para inicar la aplicación, clona el repositorio, con la opción "clone" en GitHub, ábrelo con el Visual Studio Code y, luego de presionar "Ctrl+ñ" utiliza el comando "npm run start" para verla en el navegador. La app se iniciará en el localhost, en el puerto 3000.
 
 En la misma carpeta clonada del repositorio de GitHub hay un GIF demostrativo de como interactuar con la aplicación.
+
+
