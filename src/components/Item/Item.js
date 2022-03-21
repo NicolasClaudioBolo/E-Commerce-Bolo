@@ -9,10 +9,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './Item.css';
 
 function Item ({data}){
-    return (
-
-     // ITEM   
-     
+    return (  
     <Card className='Card'>
         <CardImg src={data.image} 
         alt={data.title}

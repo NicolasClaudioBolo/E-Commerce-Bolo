@@ -7,7 +7,6 @@ import './ItemCart.css'
 const ItemCart = (item) => {
 
   const {removeFromCart} = useContext(CartContext)
-  const cartItems = useContext(CartContext)
   const subTotal = item.item.item.price*item.item.quantity
 
   return(
@@ -28,7 +27,7 @@ const ItemCart = (item) => {
               $ {subTotal}
             </CardText>
             <CardText key={Button}>
-              <Button onClick={() => {cartItems.removeFromCart(item.item.item.id)}} key={item.item.item.id} className='Button'>Borrar</Button>
+              <Button onClick={() => removeFromCart(item.item.item.id)} key={item.item.item.id} className='Button'>Borrar</Button>
             </CardText>
           </CardBody>
         </Card>

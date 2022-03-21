@@ -17,7 +17,8 @@ const Cart = () => {
     <div className='cart App Container' key='3123'>
         {cartItems.cart.map((c) =>{
             return  <div key='34563'>
-                      <ItemCart item={c} key={c.item.id} /> 
+                      <ItemCart item={c} key={c.item.id} />
+                      <h3>Total: </h3> 
                     </div>
         })}
                     <div key={Math.random()} className='buttonsDiv'>

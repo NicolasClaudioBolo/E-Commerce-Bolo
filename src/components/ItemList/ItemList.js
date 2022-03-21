@@ -4,8 +4,6 @@ import Item from '../Item/Item'
 
 const ItemList = ({products}) => {
 
-// MAPEO DE LOS PRODUCTOS
-
   return (
     <div>
         {products.map((product)=>{

@@ -25,8 +25,6 @@ function ItemDetail ({product}){
 
   return (
 
-   // CARD DETALLE   
-
    <div>
     <Card className='Card Detail'>
       <CardBody>
